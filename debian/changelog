@@ -1,0 +1,48 @@
+groonga-normalizer-mysql (1.0.6-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release.
+  * debian/copyright
+    - Follow machine readable copyright format
+  * debian/rules
+    - Remove needless '*.la'.
+    - Remove extra license file.
+  * Initial upload to Debian (Closes:#766710)
+
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Tue, 18 Nov 2014 00:00:00 +0900
+
+groonga-normalizer-mysql (1.0.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Sat, 29 Jun 2013 00:00:00 +0900
+
+groonga-normalizer-mysql (1.0.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Wed, 29 May 2013 00:00:00 +0900
+
+groonga-normalizer-mysql (1.0.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Mon, 29 Apr 2013 00:00:00 +0900
+
+groonga-normalizer-mysql (1.0.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Fri, 29 Mar 2013 00:00:00 +0900
+
+groonga-normalizer-mysql (1.0.1) unstable; urgency=low
+
+  * New upstream release
+
+ -- khayashi <hayashi@clear-code.com>  Thu, 28 Feb 2013 00:00:00 +0900
+
+groonga-normalizer-mysql (1.0.0-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Kouhei Sutou <kou@clear-code.com>  Sat, 9 Feb 2013 00:00:00 +0900
