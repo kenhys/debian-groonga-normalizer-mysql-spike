@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+PLUGIN_SONAME=$(find . -name 'mysql.so')
+PLUGIN_PATH="${PLUGIN_SONAME%.so}"
+WORKDIR=$(mktemp -d)
+
+groonga -n $WORKDIR/db plugin_register $(realpath $PLUGIN_PATH)
+echo "run: register OK"
+
+groonga $WORKDIR/db plugin_unregister $(realpath $PLUGIN_PATH)
+echo "run: unregister OK"

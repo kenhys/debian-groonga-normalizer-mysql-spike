@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+PLUGIN_SONAME=$(find . -name 'mysql.so')
+PLUGIN_PATH="${PLUGIN_SONAME%.so}"
+WORKDIR=$(mktemp -d)
+groonga -n $WORKDIR/db plugin_register $(realpath $PLUGIN_PATH)
+
+RAWTEXT="ブラックふらつくバルスパルスａＡＢＣaABC"
+FILTER=".[1].normalized"
+
+NORMALIZED=$(groonga $WORKDIR/db normalize NormalizerMySQLGeneralCI $RAWTEXT | jq --raw-output $FILTER)
+echo "NormalizerMySQLGeneralCI $RAWTEXT -> $NORMALIZED"
+[ "$NORMALIZED" = "ブラックふらつくバルスパルスＡＡＢＣAABC" ]
+
+NORMALIZED=$(groonga $WORKDIR/db normalize NormalizerMySQLUnicodeCI $RAWTEXT | jq --raw-output $FILTER)
+echo "NormalizerMySQLUnicodeCI $RAWTEXT -> $NORMALIZED"
+[ "$NORMALIZED" = "ふらつくふらつくはるすはるすAABCAABC" ]
+
+NORMALIZED=$(groonga $WORKDIR/db normalize NormalizerMySQLUnicode520CI $RAWTEXT | jq --raw-output $FILTER)
+echo "NormalizerMySQLUnicode520CI $RAWTEXT -> $NORMALIZED"
+[ "$NORMALIZED" = "ふらつくふらつくはるすはるすAABCAABC" ]
+
+NORMALIZED=$(groonga $WORKDIR/db normalize NormalizerMySQLUnicodeCIExceptKanaCIKanaWithVoicedSoundMark $RAWTEXT | jq --raw-output $FILTER)
+echo "NormalizerMySQLUnicodeCIExceptKanaCIKanaWithVoicedSoundMark $RAWTEXT -> $NORMALIZED"
+[ "$NORMALIZED" = "ぶらっくふらつくばるすぱるすAABCAABC" ]
+
+NORMALIZED=$(groonga $WORKDIR/db normalize NormalizerMySQLUnicode520CIExceptKanaCIKanaWithVoicedSoundMark $RAWTEXT | jq --raw-output $FILTER)
+echo "NormalizerMySQLUnicode520CIExceptKanaCIKanaWithVoicedSoundMark $RAWTEXT -> $NORMALIZED"
+[ "$NORMALIZED" = "ぶらっくふらつくばるすぱるすAABCAABC" ]

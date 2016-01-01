@@ -1,0 +1,2 @@
+Tests: register, normalize
+Depends: groonga-bin, jq
