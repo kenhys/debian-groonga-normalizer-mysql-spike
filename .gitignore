@@ -1,0 +1,8 @@
+*.log
+*.gz
+*.xz
+*.deb
+*.dsc
+*.changes
+*.build
+groonga-normalizer-mysql*
