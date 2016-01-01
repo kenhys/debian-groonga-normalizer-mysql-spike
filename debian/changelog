@@ -2,6 +2,8 @@ groonga-normalizer-mysql (1.1.0-1) unstable; urgency=medium
 
   * Team upload.
   * New upstream release.
+  * debian/tests/*
+    - Add files for autopkgtest.
 
  -- HAYASHI Kentaro <hayashi@clear-code.com>  Fri, 01 Jan 2016 03:13:48 +0900
 
