@@ -1,3 +1,12 @@
+groonga-normalizer-mysql (1.1.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * debian/control
+    - Update to latest standard-version 3.9.8.
+
+ -- Kentaro Hayashi <hayashi@clear-code.com>  Tue, 31 May 2016 13:38:23 +0900
+
 groonga-normalizer-mysql (1.1.0-1) unstable; urgency=medium
 
   * Team upload.
