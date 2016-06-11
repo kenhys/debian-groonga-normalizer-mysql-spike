@@ -103,6 +103,9 @@ case $1 in
     upstream-diff)
 	diff -uNr --exclude=changelog groonga/packages/debian debian
 	;;
+    get)
+	wget http://packages.groonga.org/source/groonga-normalizer-mysql/groonga-normalizer-mysql-${VERSION}.tar.gz
+	;;
     *)
 	usage
 	;;
