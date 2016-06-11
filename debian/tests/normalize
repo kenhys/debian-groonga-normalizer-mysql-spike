@@ -2,7 +2,7 @@
 
 set -e
 
-PLUGIN_SONAME=$(find . -name 'mysql.so')
+PLUGIN_SONAME=$(find /usr/lib/$(dpkg-architecture -qDEB_HOST_MULTIARCH)/groonga/plugins -name 'mysql.so')
 PLUGIN_PATH="${PLUGIN_SONAME%.so}"
 WORKDIR=$(mktemp -d)
 groonga -n $WORKDIR/db plugin_register $(realpath $PLUGIN_PATH)
