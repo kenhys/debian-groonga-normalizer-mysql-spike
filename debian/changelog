@@ -1,3 +1,15 @@
+groonga-normalizer-mysql (1.1.1-2) unstable; urgency=medium
+
+  * debian/control
+    - Accept linux-any and kfreebsd-any explicitly to exclude hurd-i386.
+  * debian/tests/control
+    - Install missing package which is required to execute tests.
+  * debian/tests/register
+    debian/tests/normalize
+    - Detects installed plugin correctly.
+
+ -- Kentaro Hayashi <hayashi@clear-code.com>  Sat, 11 Jun 2016 13:33:37 +0900
+
 groonga-normalizer-mysql (1.1.1-1) unstable; urgency=medium
 
   * Team upload.
