@@ -1,2 +1,2 @@
 Tests: register, normalize
-Depends: groonga-bin, jq, groonga-normalizer-mysql
+Depends: gcc groonga-bin, jq, groonga-normalizer-mysql
