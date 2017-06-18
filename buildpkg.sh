@@ -34,6 +34,7 @@ function mount_build_dir()
 
 TARGET=`find . -maxdepth 1 -type d -name 'groonga-*' | sort | tail -1`
 VERSION=1.1.1
+RELEASE=`cat release`
 echo $VERSION
 case $1 in
     mount)
@@ -79,7 +80,7 @@ case $1 in
 	;;
     build)
 	$0 source
-	DSC=${PACKAGE}_${VERSION}-1.dsc
+	DSC=${PACKAGE}_${VERSION}-${RELEASE}.dsc
 	if [ -f "$DSC" ]; then
 	    sudo DIST=sid pbuilder --build $DSC 2>&1 | tee $LOG
 	fi
