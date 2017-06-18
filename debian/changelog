@@ -1,7 +1,7 @@
 groonga-normalizer-mysql (1.1.1-3) unstable; urgency=medium
 
-  * debian/control
-    - Add missing dependency to use dpkg-architecture.
+  * debian/tests/control
+    - Add missing dependency to use dpkg-architecture correctly.
       Thanks to Charles Plessy.
 
  -- Kentaro Hayashi <hayashi@clear-code.com>  Sun, 18 Jun 2017 12:27:25 +0900
